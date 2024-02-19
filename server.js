@@ -33,7 +33,7 @@ app.use(express.json());
 
 //Cors security check Ups
 app.use(cors({
-  origin: 'https://twitter-clone-tfdd-lq92ihbdl-ojukwu-somkenes-projects.vercel.app',
+  origin: '*',
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }))
 
