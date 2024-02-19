@@ -21,7 +21,6 @@ const userSchema = new Schema({
     },
     about: {
         type: String,
-        required: true
     },
     createdAt: {
         type: Date,
@@ -29,19 +28,17 @@ const userSchema = new Schema({
     },
     niche: {
         type: String,
-        required: true
     },
     gender: {
         type: String,
-        required: true
+
     },
     date_of_birth: {
         type: String,
-        required: true
     },
     socials: {
         type: String,
-        required: true
+
     },
     profile_img: {
         url: {
