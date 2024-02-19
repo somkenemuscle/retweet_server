@@ -3,7 +3,7 @@
   "name": "ojukwu-somkene",
   "builds": [
       {
-          "src": "/app.js",
+          "src": "/server.js",
           "use": "@vercel/node"
       }
   ],
