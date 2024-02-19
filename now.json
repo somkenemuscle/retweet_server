@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "name": "ojukwu-somkene",
+  "builds": [
+      {
+          "src": "/app.js",
+          "use": "@vercel/node"
+      }
+  ],
+  "routes": [
+      {
+          "src": "/(.*)",
+          "dest": "/server.js"
+      }
+  ]
+}
