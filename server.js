@@ -19,7 +19,7 @@ mongoose.connect(`${dbUrl}`)
   .then(() => console.log("API twitter database connected"))
   .catch(err => console.log("Connection error:", err));
 
-// // Connect to MongoDB
+// Connect to MongoDB
 // mongoose.connect('mongodb://127.0.0.1/twitter')
 //   .then(() => console.log("API twitter database connected"))
 //   .catch(err => console.log("Connection error:", err));
