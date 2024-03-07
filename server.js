@@ -19,10 +19,6 @@ mongoose.connect(`${dbUrl}`)
   .then(() => console.log("API twitter database connected"))
   .catch(err => console.log("Connection error:", err));
 
-// // Connect to MongoDB
-// mongoose.connect('mongodb://127.0.0.1/twitter')
-//   .then(() => console.log("API twitter database connected"))
-//   .catch(err => console.log("Connection error:", err));
 
 //express and app config
 const app = express();
@@ -51,13 +47,6 @@ app.use('/api/comments', commentRoutes);
 app.use('/api/like', likeRoute);
 //Route for comment likes
 app.use('/api/like-comment', CommentLikeRoute);
-
-
-// //Listen for localhost port
-// const PORT = process.env.PORT || 4000;
-// app.listen(PORT, () => {
-//   console.log(`TWITTER API SERVER RUNNING on port ${PORT}`);
-// });
 
 //listen for vercel port 
 const PORT = process.env.PORT || 4000;
