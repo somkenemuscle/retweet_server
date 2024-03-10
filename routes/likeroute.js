@@ -20,7 +20,7 @@ router.post("/:tweetId/:userId", isLoggedin, handleAsyncErr(async (req, res, nex
             $pull: { likedBy: userId }
         });
         const updatedTweet = await Tweet.findById(tweetId).populate('author');
-        return res.status(200).json({ message: "You unliked A tweet", tweet: updatedTweet });
+        return res.status(200).json({ message: "You unliked a tweet", tweet: updatedTweet });
     } else {
         // User hasn't liked the tweet, so like it
         await Tweet.findByIdAndUpdate(tweetId, {
