@@ -28,7 +28,7 @@ router.post("/:tweetId/:userId", isLoggedin, handleAsyncErr(async (req, res, nex
             $push: { likedBy: userId }
         });
         const updatedTweet = await Tweet.findById(tweetId).populate('author');
-        return res.status(200).json({ message: "You Liked  A tweet", tweet: updatedTweet });
+        return res.status(200).json({ message: "You Liked  a tweet", tweet: updatedTweet });
     }
 }));
 
