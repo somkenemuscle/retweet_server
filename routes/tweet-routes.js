@@ -48,6 +48,7 @@ router.post("/", isLoggedin, upload.single('image'), handleAsyncErr(async (req, 
         createdAt: new Date() // Assign the creation date to the createdAt field
     });
     await newTweet.save(); // Save the changes to the database
+
     res.json({ newTweet });
 }));
 
@@ -69,7 +70,7 @@ router.delete("/:id", isLoggedin, handleAsyncErr(async (req, res, next) => {
     }
     let filename = tweet.image.filename;
     await Tweet.findByIdAndDelete(req.params.id);
-    if (filename)  await cloudinary.uploader.destroy(filename)
+    if (filename) await cloudinary.uploader.destroy(filename)
     return res.status(200).json({ message: "Tweet deleted successfully" });
 }));
 
@@ -97,7 +98,6 @@ router.use((err, req, res, next) => {
     console.log(err)
 })
 module.exports = router;
-
 
 
 
