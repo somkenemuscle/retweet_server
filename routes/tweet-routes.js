@@ -71,7 +71,7 @@ router.delete("/:id", isLoggedin, handleAsyncErr(async (req, res, next) => {
     let filename = tweet.image.filename;
     await Tweet.findByIdAndDelete(req.params.id);
     if (filename) await cloudinary.uploader.destroy(filename)
-    return res.status(200).json({ message: "Tweet deleted successfully" });
+    return res.status(200).json({ message: "Tweet deleted " });
 }));
 
 
