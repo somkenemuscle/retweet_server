@@ -80,7 +80,7 @@ router.delete("/:id/comments/:commentid", isLoggedin, handleAsyncErr(async (req,
     const { id, commentid } = req.params;
     const foundComment = await Comment.findById(commentid).populate('author');
     if (!foundComment) {
-        return res.status(404).json({ message: "Comment was not found" });
+        return res.status(404).json({ message: "Comment not found" });
     }
     // Check if the authenticated user's ID matches the comment author id of the tweet
     if (!req.user._id.equals(foundComment.author._id)) {
